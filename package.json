@@ -1,0 +1,21 @@
+{
+    "name": "Creative",
+    "version": "5.0.3",
+    "description": "Creative is a stylish one page HTML theme for Bootstrap.",
+    "homepage": "https://startbootstrap.com/template-overviews/creative",
+    "license": "MIT",
+    "author": "Start Bootstrap",
+    "options": {
+        "header-title":[],
+        "header-text":[],
+        "header-image": {
+            "type":"media"
+        },
+        "about-title":[],
+        "about-text":[],
+        "contact-title":[],
+        "contact-text":[],
+        "contact-email":[],
+        "contact-phone":[]
+    }
+}
