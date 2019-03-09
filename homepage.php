@@ -40,34 +40,20 @@
     </div>
     <div class="container">
       <div class="row">
+<?php
+  foreach(core\models\post::getPosts(
+    ['posts'=>4,'category'=> gila::option('theme.service-category')]) as $post) {
+?>
         <div class="col-lg-3 col-md-6 text-center">
           <div class="service-box mt-5 mx-auto">
-            <i class="fas fa-4x fa-gem text-primary mb-3 sr-icon-1"></i>
-            <h3 class="mb-3">Sturdy Templates</h3>
-            <p class="text-muted mb-0">Our templates are updated regularly so they don't break.</p>
+            <img class="img-fluid" src="<?=view::thumb($post['img'])?>">
+            <h3 class="mb-3"><?=$post['title']?></h3>
+            <p class="text-muted mb-0"><?=$post['description']?></p>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="service-box mt-5 mx-auto">
-            <i class="fas fa-4x fa-paper-plane text-primary mb-3 sr-icon-2"></i>
-            <h3 class="mb-3">Ready to Ship</h3>
-            <p class="text-muted mb-0">You can use this theme as is, or you can make changes!</p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="service-box mt-5 mx-auto">
-            <i class="fas fa-4x fa-code text-primary mb-3 sr-icon-3"></i>
-            <h3 class="mb-3">Up to Date</h3>
-            <p class="text-muted mb-0">We update dependencies to keep things fresh.</p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="service-box mt-5 mx-auto">
-            <i class="fas fa-4x fa-heart text-primary mb-3 sr-icon-4"></i>
-            <h3 class="mb-3">Made with Love</h3>
-            <p class="text-muted mb-0">You have to make your websites with love these days!</p>
-          </div>
-        </div>
+<?php
+  }
+?>
       </div>
     </div>
   </section>
@@ -76,11 +62,12 @@
     <div class="container-fluid p-0">
       <div class="row no-gutters popup-gallery">
 <?php
-  foreach(core\models\post::getPosts(['posts'=>6]) as $post) {
+  foreach(core\models\post::getPosts(
+    ['posts'=>6, 'category'=> gila::option('theme.project-category')]) as $post) {
 ?>
         <div class="col-lg-4 col-sm-6">
           <a class="portfolio-box" href="<?=$post['img']?>">
-            <img class="img-fluid" src="<?=view::thumb($post['img'], 'thumb/', 600)?>" alt="">
+            <img class="img-fluid" src="<?=view::thumb($post['img'], 'thumb600/', 600)?>" alt="">
             <div class="portfolio-box-caption">
               <div class="portfolio-box-caption-content">
                 <div class="project-name">

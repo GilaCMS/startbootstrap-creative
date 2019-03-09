@@ -13,6 +13,12 @@
         },
         "about-title":[],
         "about-text":[],
+        "service-category": {
+          "type":"postcategory"
+        },
+        "project-category": {
+          "type":"postcategory"
+        },
         "contact-title":[],
         "contact-text":[],
         "contact-email":[],
