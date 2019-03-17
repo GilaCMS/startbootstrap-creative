@@ -46,7 +46,7 @@
 ?>
         <div class="col-lg-3 col-md-6 text-center">
           <div class="service-box mt-5 mx-auto">
-            <img class="img-fluid" src="<?=view::thumb($post['img'])?>">
+            <img class="img-fluid lazy" data-src="<?=view::thumb($post['img'])?>">
             <h3 class="mb-3"><?=$post['title']?></h3>
             <p class="text-muted mb-0"><?=$post['description']?></p>
           </div>
@@ -67,7 +67,7 @@
 ?>
         <div class="col-lg-4 col-sm-6">
           <a class="portfolio-box" href="<?=$post['img']?>">
-            <img class="img-fluid" src="<?=view::thumb($post['img'], 'thumb600/', 600)?>" alt="">
+            <img class="img-fluid lazy" data-src="<?=view::thumb($post['img'], 'thumb600/', 600)?>" alt="">
             <div class="portfolio-box-caption">
               <div class="portfolio-box-caption-content">
                 <div class="project-name">

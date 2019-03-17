@@ -33,6 +33,7 @@
   <script src="themes/startbootstrap-creative/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
   <!-- Custom scripts for this template -->
+  <script src="src/core/assets/lazyImgLoad.js"></script>
   <script src="themes/startbootstrap-creative/js/creative.min.js"></script>
 
 </body>
