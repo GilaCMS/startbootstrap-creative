@@ -4,7 +4,7 @@
 height:120px;
 margin-bottom:40px;
 background-color:#333;
-background-image: url('<?=gila::option('theme.header-image')?>');
+background-image: url('<?=Gila::option('theme.header-image')?>');
 opacity:0.8;
 }
 </style>

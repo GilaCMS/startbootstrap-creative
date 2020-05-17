@@ -4,12 +4,12 @@
       <div class="row">
         <div class="col-lg-10 mx-auto">
           <h1 class="text-uppercase">
-            <strong><?=gila::option('theme.header-title','Your Favorite Source of Free Bootstrap Themes')?></strong>
+            <strong><?=Gila::option('theme.header-title','Your Favorite Source of Free Bootstrap Themes')?></strong>
           </h1>
           <hr>
         </div>
         <div class="col-lg-8 mx-auto">
-          <p class="text-faded mb-5"><?=gila::option('theme.header-text','Start Bootstrap can help you build better websites using the Bootstrap CSS frame')?></p>
+          <p class="text-faded mb-5"><?=Gila::option('theme.header-text','Start Bootstrap can help you build better websites using the Bootstrap CSS frame')?></p>
           <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
         </div>
       </div>
@@ -20,9 +20,9 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto text-center">
-          <h2 class="section-heading text-white"><?=gila::option('theme.about-title','We\'ve got what you need!')?></h2>
+          <h2 class="section-heading text-white"><?=Gila::option('theme.about-title','We\'ve got what you need!')?></h2>
           <hr class="light my-4">
-          <p class="text-faded mb-4"><?=gila::option('theme.about-text','Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!')?></p>
+          <p class="text-faded mb-4"><?=Gila::option('theme.about-text','Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!')?></p>
           <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
         </div>
       </div>
@@ -33,7 +33,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading">At Your Service</h2>
+          <h2 class="section-heading"><?=Gila::option("theme.services-title")??"At Your Service"?></h2>
           <hr class="my-4">
         </div>
       </div>
@@ -41,12 +41,12 @@
     <div class="container">
       <div class="row">
 <?php
-  foreach(core\models\post::getPosts(
-    ['posts'=>4,'category'=> gila::option('theme.service-category')]) as $post) {
+  foreach(core\models\Post::getPosts(
+    ['posts'=>4,'category'=> Gila::option('theme.services-category')]) as $post) {
 ?>
         <div class="col-lg-3 col-md-6 text-center">
           <div class="service-box mt-5 mx-auto">
-            <img class="img-fluid lazy" data-src="<?=view::thumb($post['img'])?>">
+            <img class="img-fluid lazy" style="min-width:1em" data-src="<?=View::thumb($post['img'], 'thumb400/', 400)?>">
             <h3 class="mb-3"><?=$post['title']?></h3>
             <p class="text-muted mb-0"><?=$post['description']?></p>
           </div>
@@ -62,12 +62,12 @@
     <div class="container-fluid p-0">
       <div class="row no-gutters popup-gallery">
 <?php
-  foreach(core\models\post::getPosts(
-    ['posts'=>6, 'category'=> gila::option('theme.project-category')]) as $post) {
+  foreach(core\models\Post::getPosts(
+    ['posts'=>6, 'category'=> Gila::option('theme.portfolio-category')]) as $post) {
 ?>
         <div class="col-lg-4 col-sm-6">
           <a class="portfolio-box" href="<?=$post['img']?>">
-            <img class="img-fluid lazy" data-src="<?=view::thumb($post['img'], 'thumb600/', 600)?>" alt="">
+            <img class="img-fluid lazy" style="min-width:1em" data-src="<?=View::thumb($post['img'], 'thumb600/', 600)?>" alt="">
             <div class="portfolio-box-caption">
               <div class="portfolio-box-caption-content">
                 <div class="project-name">
@@ -81,4 +81,3 @@
       </div>
     </div>
   </section>
-
